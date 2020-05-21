@@ -7,7 +7,7 @@ export class MessageService {
   messages: string[] = [];
 
   add(message: string, type: string) {
-    var icon;
+    var icon, newMessage;
     switch(type) {
       case 'error': {
         icon = 'fa-exclamation-triangle';
@@ -27,11 +27,12 @@ export class MessageService {
         break;
       }
     }
-    this.messages.push({
+    newMessage = {
       text: message,
       type: type,
       icon: icon
-    });
+    }
+    this.messages.push(newMessage);
   }
 
   clear() {

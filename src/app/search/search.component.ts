@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Search } from '../search';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-search',
@@ -10,10 +11,11 @@ export class SearchComponent implements OnInit {
 
   search: Search = {
     text: '',
-    confirm: false
   }
 
-  constructor() { }
+  constructor(
+    public resultService: ResultService
+  ) { }
 
   ngOnInit(): void {
   }

@@ -14,11 +14,13 @@ export class ResultsComponent implements OnInit {
   constructor(private resultService: ResultService) { }
 
   ngOnInit(): void {
-    this.getResults();
+    console.log('Results Component ngOnInit');
+    this.getResults('foo');
   }
 
-  getResults(): void {
-    this.resultService.getResults()
+  getResults(string): void {
+    console.log('Results Component getResults');
+    this.resultService.getResults(string)
       .subscribe(results => this.results = results);
   }
 }
