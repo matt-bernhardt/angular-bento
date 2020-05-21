@@ -1,0 +1,8 @@
+<div *ngIf="results" class="wrap-results">
+  <h2>Search results</h2>
+  <ul>
+    <li *ngFor="let result of results" class="wrap-result">
+      <h3><a href="{{ result.link }}">{{ result.title }}</a></h3>
+    </li>
+  </ul>
+</div>
