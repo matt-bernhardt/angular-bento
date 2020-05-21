@@ -1,1 +1,523 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #595959;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul {
+  padding-left: 2.5rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: .5rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #767676;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+p,
+ol,
+ul,
+dl {
+  margin: 0 0 1em 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+/* Utility classes */
+.layout-band:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.sr {
+  border: 0 none;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal;
+}
+
+
+
+
+
+
+/* Page layout classes */
+.wrap-gridband,
+.wrap-notice,
+.wrap-header,
+.wrap-header-local,
+.wrap-content,
+.wrap-footer,
+.wrap-footer-institute {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 10px 4%;
+}
+.wrap-gridband:after,
+.wrap-notice:after,
+.wrap-header:after,
+.wrap-header-local:after,
+.wrap-content:after,
+.wrap-footer:after,
+.wrap-footer-institute:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.wrap-outer-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.wrap-header .header-slim .logo-mit-lib img {
+  height: 35px;
+}
+
+.wrap-header-core,
+.wrap-header-supp {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.wrap-header-core {
+  width: 65%;
+}
+
+.wrap-header-supp {
+  width: 33%;
+}
+.wrap-header-supp .link-logo-mit {
+  float: right;
+}
+
+.wrap-header-local .wrap-local-nav {
+  margin-top: 8px;
+}
+.wrap-header-local .wrap-local-nav .nav-item {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+.wrap-header-local .wrap-local-nav .nav-item.current {
+  border: 1px solid #0000FF;
+}
+
+.wrap-header {
+  background: #000 url("/assets/vi-shape7-tp.svg") no-repeat 0 65%;
+}
+.wrap-header .logo-mit-lib {
+  display: inline-block;
+  fill: #fff;
+  color: #fff;
+}
+.wrap-header .logo-mit-lib img {
+  width: auto;
+  max-height: 44px;
+  max-width: 100%;
+}
+.wrap-header .link-logo-mit {
+  color: #fff;
+}
+.wrap-header .link-logo-mit .logo-mit {
+  fill: #767676;
+}
+.wrap-header .link-logo-mit .logo-mit .color {
+  fill: #fff;
+}
+
+.wrap-outer-content {
+  background-color: #fff;
+  color: #000;
+}
+
+.wrap-content {
+  padding-top: 3rem;
+  padding-bottom: 2%;
+}
+.wrap-content .content-main {
+  padding-bottom: 3rem;
+}
+
+.wrap-outer-footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.wrap-footer {
+  background: #000 url("/assets/vi-shape7-tp.svg") no-repeat 10% center;
+}
+.wrap-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.wrap-footer .title {
+  margin-bottom: .8rem;
+}
+.wrap-footer .wrap-list .link-sub {
+  display: list-item;
+  list-style-type: none;
+  margin-bottom: .65rem;
+  font-weight: 300;
+}
+.wrap-footer .logo-mit-lib {
+  fill: #fff;
+}
+.wrap-footer .logo-mit-lib img {
+  max-height: 60px;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+.wrap-footer .wrap-usergroups {
+  font-size: 1.4rem;
+}
+.wrap-footer .wrap-social p, .wrap-footer .wrap-social a {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: .5rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.wrap-footer .wrap-social svg {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  padding: 0.2em;
+  background: #fff none repeat scroll 0 0;
+}
+.wrap-footer .wrap-social svg path {
+  fill: #333;
+}
+
+.wrap-footer.footer-slim .sitemap-libraries-abbrev a {
+  font-size: 1.4rem;
+}
+
+.wrap-outer-footer-institute {
+  background-color: #333;
+  font-size: 1rem;
+  color: #dedede;
+}
+.wrap-outer-footer-institute a {
+  color: #fff;
+}
+.wrap-outer-footer-institute .link-logo-mit {
+  display: inline-block;
+}
+.wrap-outer-footer-institute .link-logo-mit .logo-mit {
+  fill: #ccc;
+}
+.wrap-outer-footer-institute .link-logo-mit .logo-mit .color {
+  fill: #fff;
+}
+.wrap-outer-footer-institute .about-mit {
+  display: inline-block;
+  color: #dedede;
+  text-transform: uppercase;
+}
+.wrap-outer-footer-institute .license {
+  margin-top: 1rem;
+  color: #dedede;
+}
+
+.wrap-footer {
+  padding: 3.5rem 4%;
+}
+.wrap-footer .wrap-sitemap .menu-sub {
+  display: none;
+}
+.wrap-footer .identity {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.wrap-footer .wrap-logo-lib {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 20px 20px 0;
+}
+.wrap-footer .wrap-social {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 20px;
+}
+.wrap-footer .wrap-usergroups {
+  width: 100%;
+  border-top: 1px solid #595959;
+  padding-top: 2rem;
+}
+.wrap-footer .wrap-usergroups span {
+  display: inline-block;
+  margin: 1rem 1.5rem 1rem 0;
+}
+.wrap-footer .wrap-usergroups span:after {
+  content: '';
+}
+.wrap-footer .wrap-social .text-find-us {
+  display: none;
+}
+@media (min-width: 768px) {
+  .wrap-footer .wrap-sitemap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .wrap-footer .wrap-sitemap .col {
+    margin-right: 3%;
+  }
+  .wrap-footer .wrap-sitemap .col:last-child {
+    margin-right: 0;
+  }
+  .wrap-footer .wrap-sitemap .menu-sub {
+    display: block;
+  }
+  .wrap-footer .identity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 4% 0 0 0;
+  }
+  .wrap-footer .wrap-logo-lib,
+  .wrap-footer .wrap-usergroups,
+  .wrap-footer .wrap-social {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .wrap-footer .wrap-logo-lib {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-right: 4%;
+  }
+  .wrap-footer .wrap-usergroups {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+    margin: 1rem 4% 0 0;
+    border-top: none;
+  }
+  .wrap-footer .wrap-usergroups span {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .wrap-footer .wrap-social {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 4%;
+  }
+}
+@media (min-width: 1024px) {
+  .wrap-footer .wrap-usergroups {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: auto;
+  }
+  .wrap-footer .wrap-social {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+.wrap-footer.footer-slim {
+  padding: 1.5rem 4%;
+}
+.wrap-footer.footer-slim .footer-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrap-footer.footer-slim .wrap-sitemap {
+  margin-left: 2%;
+}
+.wrap-footer.footer-slim .wrap-sitemap .item {
+  display: block;
+  margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .wrap-footer.footer-slim .footer-main {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .wrap-footer.footer-slim .wrap-sitemap .item {
+    display: inline-block;
+  }
+}
+
+.wrap-footer-institute {
+  padding: 20px 4%;
+}
+
+
+
+
+
+
+
+
+/* Internal content styles */
+.hd-1, .wrap-content h1,
+.wrap-content .hd-1 {
+  margin-bottom: .5em;
+  font-size: 4.2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hd-2, .wrap-content h2,
+.wrap-content .hd-2, .wrap-outer-header-local .title-site {
+  margin-bottom: .5em;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hd-3, .wrap-content h3,
+.wrap-content .hd-3 {
+  margin-bottom: .5em;
+  font-size: 2.6rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.hd-4, .wrap-content h4,
+.wrap-content .hd-4 {
+  margin-bottom: .5em;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hd-5, .wrap-content h5,
+.wrap-content .hd-5, .bit .title {
+  margin-bottom: .5em;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hd-6, .wrap-content h6,
+.wrap-content .hd-6, .wrap-footer .title {
+  margin-bottom: .5em;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hd-subtitle1, .wrap-content .subtitle {
+  margin-bottom: .5em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.hd-subtitle2, .wrap-content .subtitle2 {
+  margin-bottom: .5em;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.hd-subtitle3, .wrap-content .subtitle3 {
+  margin-bottom: .5em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.wrap-content li {
+  margin-bottom: .5em;
+}
+.wrap-content .title-page {
+  margin-bottom: 1rem;
+  padding: .5rem 0 1rem 0;
+  font-weight: 600;
+}
+.wrap-content .cta-link {
+  -webkit-transition: background-color ease-in-out .3s;
+  transition: background-color ease-in-out .3s;
+  display: inline-block;
+  padding: .5em;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.wrap-content .cta-link:hover {
+  background-color: #C702C7;
+  color: #fff;
+}

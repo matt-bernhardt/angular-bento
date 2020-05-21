@@ -1,42 +1,9 @@
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-p,
-ol,
-ul,
-dl {
-  margin: 0 0 1em 0;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-a {
-  text-decoration: none;
-}
 
 input[type=checkbox],
 input[type=radio] {
   margin-right: .5rem;
 }
 
-.sr {
-  border: 0 none;
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal;
-}
 
 .wrap-bar {
   display: -webkit-box;
@@ -138,68 +105,6 @@ input[type=radio] {
   color: #C702C7;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-size: 62.5%;
-}
-
-body {
-  background-color: #595959;
-  color: #fff;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-ol,
-ul {
-  padding-left: 2.5rem;
-}
-
-li > ul,
-li > ol {
-  margin-top: .5rem;
-}
-
-dt {
-  font-weight: 600;
-}
-
-dd {
-  margin-left: 0;
-  margin-bottom: 1rem;
-}
-
-hr {
-  margin: 2rem 0;
-  border: none;
-  border-top: 1px solid #767676;
-}
-
-.wrap-outer-header.reasons {
-  background: #f23074;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #f23074 0%, #d6d628 36%, #207cca 66%, #544b8c 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f23074', endColorstr='#544b8c',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
-}
-.wrap-outer-header.reasons .wrap-header {
-  background: transparent;
-}
 
 .hd-1, .wrap-content h1,
 .wrap-content .hd-1 {
@@ -284,36 +189,6 @@ hr {
   font-weight: 400;
 }
 
-.layout-band:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.wrap-gridband,
-.wrap-notice,
-.wrap-header,
-.wrap-header-local,
-.wrap-breadcrumb,
-.wrap-content,
-.wrap-footer,
-.wrap-footer-institute {
-  max-width: 114rem;
-  margin: 0 auto;
-  padding: 10px 4%;
-}
-.wrap-gridband:after,
-.wrap-notice:after,
-.wrap-header:after,
-.wrap-header-local:after,
-.wrap-breadcrumb:after,
-.wrap-content:after,
-.wrap-footer:after,
-.wrap-footer-institute:after {
-  content: '';
-  display: table;
-  clear: both;
-}
 
 .gridband:after {
   content: '';
@@ -356,53 +231,6 @@ hr {
     float: right;
     margin-right: 0;
   }
-}
-
-.wrap-header .header-slim .logo-mit-lib img {
-  height: 35px;
-}
-
-.wrap-header-core,
-.wrap-header-supp {
-  display: inline-block;
-  vertical-align: bottom;
-}
-
-.wrap-header-core {
-  width: 65%;
-}
-
-.wrap-header-supp {
-  width: 33%;
-}
-.wrap-header-supp .link-logo-mit {
-  float: right;
-}
-
-.wrap-header-local .wrap-local-nav {
-  margin-top: 8px;
-}
-.wrap-header-local .wrap-local-nav .nav-item {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 1.4rem;
-  text-decoration: none;
-}
-.wrap-header-local .wrap-local-nav .nav-item.current {
-  border: 1px solid #0000FF;
-}
-
-.wrap-outer-content {
-  background-color: #fff;
-  color: #000;
-}
-
-.wrap-content {
-  padding-top: 3rem;
-  padding-bottom: 2%;
-}
-.wrap-content .content-main {
-  padding-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -1103,33 +931,6 @@ form .error .hint {
   padding: 5px 2%;
 }
 
-.wrap-outer-header {
-  background-color: #000;
-  color: #fff;
-}
-
-.wrap-header {
-  background: #000 url("/dest/i/vi-shape7-tp.svg") no-repeat 0 65%;
-}
-.wrap-header .logo-mit-lib {
-  display: inline-block;
-  fill: #fff;
-  color: #fff;
-}
-.wrap-header .logo-mit-lib img {
-  width: auto;
-  max-height: 44px;
-  max-width: 100%;
-}
-.wrap-header .link-logo-mit {
-  color: #fff;
-}
-.wrap-header .link-logo-mit .logo-mit {
-  fill: #767676;
-}
-.wrap-header .link-logo-mit .logo-mit .color {
-  fill: #fff;
-}
 
 .wrap-outer-header-local {
   border-bottom: 1px solid #ccc;
@@ -1147,16 +948,6 @@ form .error .hint {
   margin-bottom: 0;
 }
 
-.wrap-outer-breadcrumb {
-  background-color: #fff;
-  color: #595959;
-  font-size: 1.2rem;
-}
-
-.wrap-breadcrumb {
-  padding-top: 7px;
-  padding-bottom: 5px;
-}
 
 .wrap-outer-footer {
   background-color: #000;
