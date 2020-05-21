@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Result } from '../result';
-import { RESULTS } from '../mock-results';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-results',
@@ -9,15 +9,16 @@ import { RESULTS } from '../mock-results';
 })
 export class ResultsComponent implements OnInit {
 
-  results = RESULTS;
-  result: Result = {
-    link: 'https://us.cnn.com',
-    title: 'A History of Popcorn',
-  }
+  results: Result[];
 
-  constructor() { }
+  constructor(private resultService: ResultService) { }
 
   ngOnInit(): void {
+    this.getResults();
   }
 
+  getResults(): void {
+    this.resultService.getResults()
+      .subscribe(results => this.results = results);
+  }
 }
