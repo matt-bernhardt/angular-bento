@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+import { MessageService } from './message.service';
+
 import { Result } from './result'; // <-- Interface
 import { RESULTS } from './mock-results'; // <-- Mock results
 
@@ -9,9 +11,12 @@ import { RESULTS } from './mock-results'; // <-- Mock results
 })
 export class ResultService {
 
-  constructor() { }
+  constructor(
+    private messageService: MessageService
+  ) { }
 
   getResults(): Observable<Result[]> {
-  	return of(RESULTS);
+    this.messageService.add('ResultService: Fetched search results', 'success');
+    return of(RESULTS);
   }
 }
