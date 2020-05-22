@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Search } from '../search';
 import { ResultService } from '../result.service';
+import { Result } from '../result';
+import { Search } from '../search';
 
 @Component({
   selector: 'app-search',
@@ -28,9 +29,14 @@ export class SearchComponent implements OnInit {
     this.results = [];
   }
 
-  getResults(string): void {
-    console.log('Search Component getResults');
+  newResults(string): void {
+    console.log('Clearing and starting a new search');
     this.clearResults();
+    this.updateResults(string);
+  }
+
+  updateResults(string): void {
+    console.log('Conducting search for ' + string);
     this.resultService.getResults(string)
       .subscribe(results => this.results = results);
   }

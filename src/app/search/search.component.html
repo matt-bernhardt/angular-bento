@@ -2,7 +2,8 @@
   <label>Search the MIT Libraries
     <input [(ngModel)]="search.text" placeholder="Enter your search"/>
   </label>
-  <button (click)="getResults(search.text)">Search</button>
+  <button (click)="newResults(search.text)">Search</button>
+  <button *ngIf="results" (click)="updateResults(search.text)">Refine</button>
   <div *ngIf="search.text.length">
     Parsed search text: {{ search.text }}<br>
   </div>
