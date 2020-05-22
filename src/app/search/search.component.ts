@@ -13,11 +13,27 @@ export class SearchComponent implements OnInit {
     text: '',
   }
 
+  results: Result[];
+
   constructor(
     public resultService: ResultService
   ) { }
 
   ngOnInit(): void {
+    console.log('Search Component ngOnInit');
   }
+
+  clearResults(): void {
+    console.log('Clearing results');
+    this.results = [];
+  }
+
+  getResults(string): void {
+    console.log('Search Component getResults');
+    this.clearResults();
+    this.resultService.getResults(string)
+      .subscribe(results => this.results = results);
+  }
+
 
 }

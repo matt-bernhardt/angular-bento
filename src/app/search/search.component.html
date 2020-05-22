@@ -2,8 +2,10 @@
   <label>Search the MIT Libraries
     <input [(ngModel)]="search.text" placeholder="Enter your search"/>
   </label>
-  <button (click)="resultService.getResults(search.text)">Search</button>
+  <button (click)="getResults(search.text)">Search</button>
   <div *ngIf="search.text.length">
     Parsed search text: {{ search.text }}<br>
   </div>
 </div>
+
+<app-results [results]="results"></app-results>
