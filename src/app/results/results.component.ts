@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Result } from '../result';
-import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-results',
@@ -9,16 +8,11 @@ import { ResultService } from '../result.service';
 })
 export class ResultsComponent implements OnInit {
 
-  results: Result[];
+  @Input() results: Result[];
 
-  constructor(private resultService: ResultService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getResults();
   }
 
-  getResults(): void {
-    this.resultService.getResults()
-      .subscribe(results => this.results = results);
-  }
 }

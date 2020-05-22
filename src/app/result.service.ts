@@ -15,8 +15,17 @@ export class ResultService {
     private messageService: MessageService
   ) { }
 
-  getResults(): Observable<Result[]> {
-    this.messageService.add('ResultService: Fetched search results', 'success');
+  clearResults(): void {
+    return null;
+  }
+
+  getResults(string): Observable<Result[]> {
+    console.log('Result Service getResults: search for ' + string);
+    if (!string.length) {
+      this.messageService.add('ResultService: Cannot conduct a search for nothing...', 'warning');
+      return;
+    }
+    this.messageService.add('ResultService: Fetched search results for ' + string, 'success');
     return of(RESULTS);
   }
 }

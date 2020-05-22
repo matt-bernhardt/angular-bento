@@ -2,12 +2,11 @@
   <label>Search the MIT Libraries
     <input [(ngModel)]="search.text" placeholder="Enter your search"/>
   </label>
-  <label>
-    <input type="checkbox" [(ngModel)]="search.confirm">
-    Confirm search
-  </label>
+  <button (click)="newResults(search.text)">Search</button>
+  <button *ngIf="results" (click)="updateResults(search.text)">Refine</button>
   <div *ngIf="search.text.length">
-    Text: {{ search.text }}<br>
-    Confirmed: {{ search.confirm }}
+    Parsed search text: {{ search.text }}<br>
   </div>
 </div>
+
+<app-results [results]="results"></app-results>
