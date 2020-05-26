@@ -35,7 +35,8 @@ export class ResultService {
     this.log('Fetched search results for ' + string, 'success');
     return this.http.get<Result[]>(url)
       .pipe(
-        map(results => results.results),
+        map(results => results),
+        tap(x => console.log('Received something from http:')),
         tap(x => console.log(x)),
         tap(_ => this.log(`Fetched ${_.length} results`, 'success')),
         catchError(this.handleError<Result[]>('getResults', []))
