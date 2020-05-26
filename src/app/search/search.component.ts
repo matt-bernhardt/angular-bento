@@ -39,6 +39,8 @@ export class SearchComponent implements OnInit {
     console.log('Conducting search for ' + string);
     this.resultService.getResults(string)
       .subscribe(results => this.results = results);
+    console.log('Received the following:');
+    console.log(this.results);
   }
 
 

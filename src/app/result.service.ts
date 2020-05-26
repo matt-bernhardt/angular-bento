@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { catchError, map, pluck, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
 
@@ -11,7 +13,10 @@ import { RESULTS } from './mock-results'; // <-- Mock results
 })
 export class ResultService {
 
+  private searchUrl = 'https://timdex.mit.edu/api/v1/search'; // URL to web api
+
   constructor(
+    private http: HttpClient,
     private messageService: MessageService
   ) { }
 
@@ -19,13 +24,34 @@ export class ResultService {
     return null;
   }
 
-  getResults(string): Observable<Result[]> {
+  /** GET results from Timdex */
+  getResults(string: string): Observable<Result[]> {
+    const url = `${this.searchUrl}?q=${string}`;
     console.log('Result Service getResults: search for ' + string);
     if (!string.length) {
-      this.messageService.add('ResultService: Cannot conduct a search for nothing...', 'warning');
+      this.log('Cannot conduct a search for nothing...', 'warning');
       return;
     }
-    this.messageService.add('ResultService: Fetched search results for ' + string, 'success');
-    return of(RESULTS);
+    this.log('Fetched search results for ' + string, 'success');
+    return this.http.get<Result[]>(url)
+      .pipe(
+        tap(_ => this.log('Fetched results', 'success')),
+        pluck('results'),
+        // catchError(this.handleError<Result[]>('getResults', [])),
+      );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+
+      this.log(`${operation} failed: ${error.message}`, 'error');
+
+      return of(result as T);
+    };
+  }
+
+  private log(message: string, type: string) {
+    this.messageService.add(`ResultService: ${message}`, type);
   }
 }
