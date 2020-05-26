@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, pluck, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
 
@@ -35,11 +35,9 @@ export class ResultService {
     this.log('Fetched search results for ' + string, 'success');
     return this.http.get<Result[]>(url)
       .pipe(
-        map(results => results),
-        tap(x => console.log('Received something from http:')),
-        tap(x => console.log(x)),
-        tap(_ => this.log(`Fetched ${_.length} results`, 'success')),
-        catchError(this.handleError<Result[]>('getResults', []))
+        tap(_ => this.log('Fetched results', 'success')),
+        pluck('results'),
+        // catchError(this.handleError<Result[]>('getResults', [])),
       );
   }
 
